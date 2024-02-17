@@ -1,6 +1,7 @@
 import { IEBook } from "@/@types/model";
 import { useNavigate } from "react-router-dom";
 import CardFooter from "@/components/CardFooter";
+import Stars from "./Stars";
 
 type EBookCardProps = {
   book: IEBook;
@@ -20,15 +21,10 @@ export default function EBookCard({ book }: EBookCardProps) {
       </div>
       <div className="flex flex-col gap-y-2 p-3 bg-neutral-900">
         <h2 className="font-extrabold">{book.attributes.book.title}</h2>
-        <div>
-          <div>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <span>5</span>
-        </div>
+        <Stars
+          stars={Number(book.attributes.avg_review)}
+          counts={Number(book.attributes.num_of_reviews)}
+        />
         <div className="my-4">
           <span className="uppercase font-light">
             {book.attributes.currency}

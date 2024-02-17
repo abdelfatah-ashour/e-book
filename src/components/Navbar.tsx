@@ -1,14 +1,17 @@
 import { cn } from "@/lib/utils";
 import { Link, NavLink } from "react-router-dom";
 
-// import { ReactComponent as Logout } from "@/assets/images/svg/logout.svg";
-
 export default function Navbar() {
   return (
     <div className="">
       <div className="w-full lg:container mx-auto flex justify-between items-center py-4 h-32">
         <div>
-          <Link to="/">Logo</Link>
+          <img
+            src="http://bigramyweb.inovaeg.com/static/media/main-logo.d37fd44b1dd3dfb263bfdd977c7cef90.svg"
+            alt="big ramy"
+            loading="lazy"
+            className="max-h-20"
+          />
         </div>
         <button>Signin or singup</button>
       </div>
