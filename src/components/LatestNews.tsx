@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import TemplateSections from "./TemplateSections";
+import TemplateSections from "@/components/TemplateSections";
 
 export default function LatestNews() {
   return (
@@ -8,7 +8,7 @@ export default function LatestNews() {
         {Array.from({ length: 7 }).map((_, index) => (
           <div
             className={cn(
-              "col-span-12 md:col-span-6 lg:col-span-3 min-h-[25rem] rounded relative flex flex-col justify-end  bg-gray-400 p-4",
+              "col-span-12 md:col-span-6 lg:col-span-3 min-h-[25rem] rounded relative flex flex-col justify-end  bg-neutral-900 p-4",
               {
                 "col-span-12 lg:col-span-4": index < 3,
               }

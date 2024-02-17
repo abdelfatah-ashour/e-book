@@ -1,5 +1,5 @@
-import Pagination from "./Pagination";
-import TemplateSections from "./TemplateSections";
+import Pagination from "@/components/Pagination";
+import TemplateSections from "@/components/TemplateSections";
 
 export default function ExploreAllEBook() {
   return (

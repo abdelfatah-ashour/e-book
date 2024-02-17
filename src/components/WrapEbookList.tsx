@@ -1,5 +1,5 @@
 import { IEBook } from "@/@types/model";
-import EBookCard from "./EBookCard";
+import EBookCard from "@/components/EBookCard";
 
 type EbookListProps = {
   list: IEBook[];

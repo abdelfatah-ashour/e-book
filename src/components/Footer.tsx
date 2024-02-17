@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {
@@ -41,39 +42,88 @@ export default function Footer() {
           </div>
           <ul className="list-none flex flex-col gap-6 col-span-6 lg:col-span-3">
             <li>
-              <NavLink to="#" className="capitalize font-light">
+              <NavLink
+                to="/news"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 News
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="capitalize font-light">
+              <NavLink
+                to="/tournamets"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 Tournamets
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="capitalize font-light">
+              <NavLink
+                to="/courses"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 Courses
               </NavLink>
             </li>
             <li>
-              <NavLink to="/e-book" className="capitalize font-light">
+              <NavLink
+                to="/e-book"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 E-Book
               </NavLink>
             </li>
           </ul>
           <ul className="list-none flex flex-col gap-6 col-span-6 lg:col-span-3">
             <li>
-              <NavLink to="#" className="capitalize font-light">
+              <NavLink
+                to="/privacy-policies"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 privacy policies
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="capitalize font-light">
+              <NavLink
+                to="/terms-conditions"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 terms & conditions
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="capitalize font-light">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  cn("capitalize font-light", {
+                    "text-green-600 font-semibold": isActive,
+                  })
+                }
+              >
                 contact us
               </NavLink>
             </li>

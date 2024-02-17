@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Link, NavLink } from "react-router-dom";
 
 // import { ReactComponent as Logout } from "@/assets/images/svg/logout.svg";
@@ -16,31 +17,51 @@ export default function Navbar() {
           <nav className="flex flex-nowrap gap-x-6 py-2 bg-inherit">
             <NavLink
               to="/"
-              className="font-light capitalize bg-inherit active:text-green-600"
+              className={({ isActive }) =>
+                cn("font-light capitalize bg-inherit active:text-green-600", {
+                  "text-green-600 font-semibold": isActive,
+                })
+              }
             >
               Home
             </NavLink>
             <NavLink
-              to="/"
-              className="font-light capitalize bg-inherit active:text-green-600"
+              to="/news"
+              className={({ isActive }) =>
+                cn("font-light capitalize bg-inherit active:text-green-600", {
+                  "text-green-600 font-semibold": isActive,
+                })
+              }
             >
               news
             </NavLink>
             <NavLink
-              to="/"
-              className="font-light capitalize bg-inherit active:text-green-600"
+              to="/courses"
+              className={({ isActive }) =>
+                cn("font-light capitalize bg-inherit active:text-green-600", {
+                  "text-green-600 font-semibold": isActive,
+                })
+              }
             >
               Courses
             </NavLink>
             <NavLink
               to="/e-book"
-              className="font-light capitalize bg-inherit active:text-green-600"
+              className={({ isActive }) =>
+                cn("font-light capitalize bg-inherit active:text-green-600", {
+                  "text-green-600 font-semibold": isActive,
+                })
+              }
             >
               E Book
             </NavLink>
             <NavLink
-              to="/"
-              className="font-light capitalize bg-inherit active:text-green-600"
+              to="/contact"
+              className={({ isActive }) =>
+                cn("font-light capitalize bg-inherit active:text-green-600", {
+                  "text-green-600 font-semibold": isActive,
+                })
+              }
             >
               Contact Us
             </NavLink>

@@ -1,6 +1,6 @@
 import { IEBook } from "@/@types/model";
 import { useNavigate } from "react-router-dom";
-import CardFooter from "./CardFooter";
+import CardFooter from "@/components/CardFooter";
 
 type EBookCardProps = {
   book: IEBook;

@@ -1,4 +1,4 @@
-import TemplateSections from "./TemplateSections";
+import TemplateSections from "@/components/TemplateSections";
 
 export default function ExploreCourses() {
   return (
@@ -7,7 +7,7 @@ export default function ExploreCourses() {
         {Array.from({ length: 4 }).map((_, index) => (
           <div
             className={
-              "col-span-12 md:col-span-6 lg:col-span-3 min-h-[20rem] rounded relative flex flex-col items-start gap-4 bg-gray-400 p-4"
+              "col-span-12 md:col-span-6 lg:col-span-3 min-h-[20rem] rounded relative flex flex-col items-start gap-4 bg-neutral-900 p-4"
             }
             key={index} // TODO:: recommended to extract key by unique ID not index
           >
