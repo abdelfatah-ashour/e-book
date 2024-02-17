@@ -4,32 +4,16 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function EBookDetails() {
-  const { data: book, error, onStateFetching, setList } = useBookDetails();
+  const { data: book, error, fetchData } = useBookDetails();
   const params = useParams();
-  console.log("params", params);
 
   useEffect(() => {
-    async function fetchData() {
-      onStateFetching(true, true, null);
+    if (params.id) fetchData(params.id);
+  }, [fetchData, params.id]);
 
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_BASE_API_URL}/api/v2/storefront/products/${
-            params.id
-          }`
-        );
-
-        const result = await response.json();
-
-        onStateFetching(false, true, null);
-        setList(result.data);
-      } catch (error) {
-        onStateFetching(false, false, error as string);
-      }
-    }
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useEffect(() => {
+    document.title = `#${params.id}E-Book`; // TODO:: Temp mutate title
+  }, [params.id]);
 
   return (
     <div className="lg:container mx-auto px-4 lg:px-0">

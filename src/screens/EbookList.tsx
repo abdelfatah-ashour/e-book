@@ -3,30 +3,15 @@ import { useListEBook } from "@/services/listEBook";
 import { useEffect } from "react";
 
 export default function EbookList() {
-  const { loaded, loading, data, error, onStateFetching, setList } =
-    useListEBook();
+  const { loaded, loading, data, error, fetchData } = useListEBook();
 
   useEffect(() => {
-    async function fetchData() {
-      onStateFetching(true, true, null);
-
-      try {
-        const response = await fetch(
-          `${
-            import.meta.env.VITE_BASE_API_URL
-          }/api/v2/storefront/products?filter[product_type]=digital&filter[sub_product_type]=book`
-        );
-
-        const result = await response.json();
-
-        onStateFetching(false, true, null);
-        setList(result.data);
-      } catch (error) {
-        onStateFetching(false, false, error as string);
-      }
-    }
     fetchData();
-  }, [onStateFetching, setList]);
+  }, [fetchData]);
+
+  useEffect(() => {
+    document.title = "E-Book list"; // TODO:: Temp mutate title
+  }, []);
 
   return (
     <div className="lg:container mx-auto px-4 lg:px-0">
